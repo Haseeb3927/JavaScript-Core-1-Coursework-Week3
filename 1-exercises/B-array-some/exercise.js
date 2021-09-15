@@ -14,11 +14,49 @@ var pairsByIndex = [[0, 3], [1, 2], [2, 1], null, [3, 0]];
 
 var students = ["Islam", "Lesley", "Harun", "Rukmini"];
 var mentors = ["Daniel", "Irina", "Mozafar", "Luke"];
+function isNull(num) {
+  return num === null;
+}
+const catchNull = pairsByIndex.some(isNull);
+if (catchNull) console.log("Null");
+process.exit(1);
+
+// function checkNullValue(pair) {
+//   if (pairsByIndex.some(null)) {
+//     process.exit(1);
+//   }
+// }
+// if (pairsByIndex.some(checkNull)) {
+//   process.exit(1);
+// }
 
 var pairs = pairsByIndex.map(function (indexes) {
+  // if (indexes == null) {
+  //   console.log("Null found");
+  //   process.exit(1);
+  // }
+  // if (pairsByIndex.some(checkNull)) {
+  //   process.exit(1);
+  // }
   var student = students[indexes[0]];
   var mentor = mentors[indexes[1]];
   return [student, mentor];
 });
 
 console.log(pairs);
+
+// function isNullAvailable(pairs) {
+//   if (pairs == null) {
+//     console.log("Null found");
+//     process.exit(1);
+//   }
+// }
+
+// var containsNull = pairs.some(isNullAvailable);
+// console.log(containsNull);
+// function checkNull(item) {
+//   if (item == null) {
+//     return true;
+//   }
+//   return false;
+// }

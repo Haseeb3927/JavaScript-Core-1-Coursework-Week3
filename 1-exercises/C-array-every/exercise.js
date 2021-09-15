@@ -5,7 +5,12 @@
 var students = ["Omar", "Austine", "Dany", "Swathi", "Lesley", "Rukmini"];
 var group = ["Austine", "Dany", "Swathi", "Daniel"];
 
-var groupIsOnlyStudents; // complete this statement
+// function studentsInGroup(array1, array2) {
+//   return group.every((word) => students.includes(word));
+// }
+
+//var groupIsOnlyStudents = group.every(studentsInGroup); // complete this statement
+var groupIsOnlyStudents = group.every((person) => students.includes(person));
 
 if (groupIsOnlyStudents) {
   console.log("The group contains only students");

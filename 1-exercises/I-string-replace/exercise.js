@@ -13,7 +13,28 @@
 let story =
   "I like dogs. One day I went to the park and I saw 10 dogs. It was a great day.";
 
-let result = story.replace("", "");
+//First we create an object of words we want to replace with new words.
+var replacementsObj = {
+  dogs: "cats",
+  10: 100000,
+  great: "brilliant",
+  day: "night",
+};
+// Then we used .replace() method which check for our words we want to replace globally and in each line "/ /gi"
+// we created a function for the words the are going to replace the words i.e
+// "\b" we added A word boundary to prevent a partial match of the words we are willing to replace
+// function(parameter){return  ObjectsArray[parameter]}
+
+let result = story.replace(/\b(dogs|10|great|day)\b/gi, function (word) {
+  return replacementsObj[word];
+});
+
+//We can use arrow functions as well
+
+// let result = story.replace(
+//   /\b(dogs|10|great|day)\b/gi,
+//   (word) => replacementsObj[word]
+// );
 
 /* EXPECTED OUTPUT */
 

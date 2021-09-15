@@ -8,7 +8,9 @@
 
 let statement = "I do not like programming";
 
-let result = "";
+let string1 = statement.substring(0, 4); // removes "I DO"
+let string2 = statement.substring(8, statement.length); //removes "LIKE PROGRAMMING"
+let result = string1.concat(string2);
 
 console.log(result);
 
