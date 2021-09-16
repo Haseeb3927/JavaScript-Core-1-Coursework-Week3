@@ -9,33 +9,38 @@
 
 var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
-//This method works
-
-var multiplesOf = (num) => {
-  if (num % 3 === 0 && num % 5 === 0) {
-    console.log("FizzBuzz");
-  } else if (num % 3 === 0) {
-    console.log("Fizz");
-  } else if (num % 5 === 0) {
-    console.log("Buzz");
-  } else console.log(num);
-};
-
-var replaced = arr.forEach(multiplesOf);
-
-//This doesn't work because I am struggling to use .map() with .foreach()
-
 // var multiplesOf = (num) => {
 //   if (num % 3 === 0 && num % 5 === 0) {
-//     return "FizzBuzz";
+//     console.log("FizzBuzz");
 //   } else if (num % 3 === 0) {
-//     return "Fizz";
+//     console.log("Fizz");
 //   } else if (num % 5 === 0) {
-//     return "Buzz";
+//     console.log("Buzz");
 //   } else console.log(num);
 // };
 
-// var replaced = arr.map().forEach(multiplesOf);
+// var replaced = arr.forEach(multiplesOf);
+
+//This doesn't work because I am struggling to use .map() with .foreach()
+
+////////////////====================This method Works============/////////////
+
+var multiplesOf = (num) => {
+  if (num % 3 === 0 && num % 5 === 0) {
+    return "FizzBuzz";
+  } else if (num % 3 === 0) {
+    return "Fizz";
+  } else if (num % 5 === 0) {
+    return "Buzz";
+  } else {
+    return num;
+  }
+};
+
+var replaced = arr
+  .map(multiplesOf)
+  .forEach((parameter) => console.log(parameter));
+
 /* EXPECTED OUTPUT */
 
 /*
