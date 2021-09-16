@@ -15,7 +15,19 @@
   
 */
 
-function getSettlers() {}
+function getSettlers(array) {
+  return array.filter((word) => /^A[\d\s\w+]*family/g.test(word));
+}
+
+////////////========Code explained=========///////////////
+/*This function tests for string which starts with word "A" and ends with "family" doesn't matter how many they are
+^ for the first letter of a word
+\d stands for digit
+\s stands for space
+\w stands for word
++ sign says at least match one or more of the words starting with A
+\
+ */
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 

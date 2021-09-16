@@ -3,7 +3,8 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the first five elements of the passed array.
 */
-function first5() {
+function first5(array) {
+  return array.slice(0, 5);
 }
 
 /*
@@ -11,7 +12,8 @@ Write a function that:
 - Accepts an array as a parameter.
 - Returns a new array containing the same elements, except sorted.
 */
-function sortArray() {
+function sortArray(array) {
+  return array.map((element) => element).sort();
 }
 
 /*
@@ -24,8 +26,11 @@ Write a function that:
 - Removes any forward slashes (/) in the strings.
 - Makes the strings all lowercase.
 */
-function tidyUpString() {
+function tidyUpString(array) {
+  return array.map((string) => string.trim().replace(/\//g, "").toLowerCase());
 }
+
+//console.log(tidyUpString(["haseeb////", "    //KHALIL//"])); ///Logs ['haseeb', 'khalil']
 
 /*
 Write a function that:
@@ -33,7 +38,23 @@ Write a function that:
 - Returns a new array containing the same elements, but without the element at the passed index.
 */
 
-function remove() {
+function remove(arr, index) {
+  /////////===========Solved using .SPLICE()==============/////////////
+
+  //   arr.splice(index, 1);
+  //   return arr;
+  // }
+
+  ////========Solved using .SLICE()=========///
+
+  // let firsPart = arr.slice(0, index);
+  // let secondPart = arr.slice(index + 1, arr.length);
+  // let newArr = firsPart.concat(secondPart);
+  // return newArr;
+
+  ///===shorter chained version of .SLICE()===///
+
+  return arr.slice(0, index).concat(arr.slice(index + 1, arr.length));
 }
 
 /*
@@ -44,7 +65,14 @@ Write a function that:
 - Numbers greater 100 must be replaced with 100.
 */
 
-function formatPercentage() {
+function formatPercentage(array) {
+  let result = array.map((num) => {
+    if (num > 100) {
+      return "100%";
+    }
+    return (Math.round(num * 100) / 100).toString() + "%";
+  });
+  return result;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */
